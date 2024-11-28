@@ -15,8 +15,7 @@ Asyncio for concurrent data analysis and visualization.
 
 
 If you enjoy this program, buy me a coffee https://buymeacoffee.com/siglabo
-You can use it free of charge or build upon my code. Happy trading!
- 
+You can use it free of charge or build upon my code. 
  
 (c) Peter De Ceuster 2024
 Software Distribution Notice: https://peterdeceuster.uk/doc/code-terms 
