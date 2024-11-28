@@ -1,4 +1,4 @@
-# Insightflow
+# Nebula Visualizer
 Nebula Visualizer v 21.1
 
 Nebula Visualizer is designed to work with Nebula PRO agenda
