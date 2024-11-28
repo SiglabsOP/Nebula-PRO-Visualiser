@@ -8,7 +8,7 @@ import pandas as pd
 import sys
 
 # Path to your agenda file
-file_path = r"userdata\nebula-agenda.txt"
+file_path = r"C:\VermeerSuite 10-1\VermeerSuite Installation\VermeerLabs\Nebula Organizer\userdata\nebula-agenda.txt"
 
 # Multithreading Worker for Heavy Operations
 class WorkerThread(QThread):
@@ -189,7 +189,11 @@ class MainWindow(QMainWindow):
         scroll_content = QWidget()  # Content widget for the scroll area
         scroll_layout = QVBoxLayout(scroll_content)
     
-        raw_data_label = QLabel(data.to_string(index=False))
+        # Sort data by the "Date" column
+        sorted_data = data.sort_values(by="Date")
+    
+        # Convert sorted data to string and display
+        raw_data_label = QLabel(sorted_data.to_string(index=False))
         raw_data_label.setWordWrap(True)  # Ensure text wraps correctly
         scroll_layout.addWidget(raw_data_label)
     
@@ -198,7 +202,7 @@ class MainWindow(QMainWindow):
         data_tab_layout.addWidget(scroll_area)
         data_tab.setLayout(data_tab_layout)
     
-        self.tabs.addTab(data_tab, "Raw Data")
+        self.tabs.addTab(data_tab, "Live Data")
 
     def init_copyright_tab(self):
         copyright_tab = QWidget()
