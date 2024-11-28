@@ -20,4 +20,10 @@ You can use it free of charge or build upon my code.
 (c) Peter De Ceuster 2024
 Software Distribution Notice: https://peterdeceuster.uk/doc/code-terms 
 This software is released under the FPA General Code License.
+
+![Screenshot 2024-11-28 163440](https://github.com/user-attachments/assets/e44a8062-6da8-4b81-b537-0f78f3a0f6eb)
+
+
+![image](https://github.com/user-attachments/assets/4e263a21-773b-4b39-a0d0-ae4788cd0df5)
+
  
