@@ -9,6 +9,7 @@ import sys
 import gc
 from cryptography.fernet import Fernet
 import io  # Add this import for StringIO
+import ctypes
 
 # Path to your encrypted agenda file and the key
 file_path = "userdata/nebula-agenda.txt"
@@ -25,8 +26,20 @@ def load_and_decrypt_file(file_path, key_path):
     
     decrypted_data = fernet.decrypt(encrypted_data)
     return decrypted_data.decode("utf-8")
+    
+ 
+def secure_zero_memory(data):
+    """Securely overwrite the memory of a string or bytearray."""
+    if isinstance(data, str):
+        # Convert string to a byte buffer
+        buf = ctypes.create_string_buffer(data.encode())
+        # Overwrite memory with null bytes
+        ctypes.memset(ctypes.addressof(buf), 0, len(data))
+    elif isinstance(data, bytes):
+        # For bytes, directly create a byte buffer
+        buf = ctypes.create_string_buffer(data)
+        ctypes.memset(ctypes.addressof(buf), 0, len(data))
 
-# Multithreading Worker for Heavy Operations
  
 
 class WorkerThread(QThread):
@@ -77,7 +90,11 @@ class WorkerThread(QThread):
         except Exception as e:
             print(f"Error processing file: {e}")
             self.data_loaded.emit(pd.DataFrame())  # Emit an empty DataFrame on error
-
+        finally:
+            # Securely overwrite and delete decrypted_text
+            secure_zero_memory(decrypted_text)
+            del decrypted_text
+            gc.collect()  # Force garbage collection
 
 
 
