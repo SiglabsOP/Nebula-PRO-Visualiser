@@ -12,7 +12,7 @@ Custom Styling: A visually appealing GUI with a cornflower blue background and r
 Efficient Processing:
 Multithreading for background data loading to keep the UI responsive.
 Asyncio for concurrent data analysis and visualization.
-
+The visualizer now reads the encrypted data.
 
 If you enjoy this program, buy me a coffee https://buymeacoffee.com/siglabo
 You can use it free of charge or build upon my code. 
