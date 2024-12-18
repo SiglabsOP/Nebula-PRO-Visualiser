@@ -1,5 +1,5 @@
 # Nebula Visualizer
-Nebula Visualizer v 21.1
+Nebula Visualizer v 30.1
 
 Nebula Visualizer is designed to work with Nebula PRO agenda
 Nebula Visualizer is a Python-based desktop application designed for visualizing and analyzing agenda data. The application is built using PyQt5 for the GUI and Plotly for data visualization, with added support for asynchronous processing and multithreading to handle large datasets efficiently.
@@ -13,6 +13,7 @@ Efficient Processing:
 Multithreading for background data loading to keep the UI responsive.
 Asyncio for concurrent data analysis and visualization.
 The visualizer now reads the encrypted data.
+Generate an encrypted key with Nebula PRO for this program to work.
 
 If you enjoy this program, buy me a coffee https://buymeacoffee.com/siglabo
 You can use it free of charge or build upon my code. 
